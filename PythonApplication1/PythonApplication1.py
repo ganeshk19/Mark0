@@ -2,7 +2,7 @@ import pandas as pd
 import requests
 url = "https://www.fast2sms.com/dev/bulk"
 
-encryptionkey = pd.read_csv(r"C:\Users\GK\Downloads\decodekeynew.csv",sep=',', names=['Character', 'Byte'], header=None, skiprows=[0])
+encryptionkey = pd.read_csv(r"YOUR CSV PATH",sep=',', names=['Character', 'Byte'], header=None, skiprows=[0])
 
 df = pd.DataFrame(data=encryptionkey)
 
@@ -40,7 +40,7 @@ while(True):
     payload = insert_sting_middle("sender_id=FSTSMS&message=&language=english&route=p&numbers=", coded_message)
     payload = payload +input("\nEnter reciever number :")
     headers = {
-    'authorization': "FdjXabpfo0UYGEqPlvJc5MWNBeVt831uz6AsDRm9i427xkOTwQzHE1cw48oZQq39xDlMNYAVLIjPs7Uf",
+    'authorization': "YOUR FAST2SMS TOKEN",
     'Content-Type': "application/x-www-form-urlencoded",
     'Cache-Control': "no-cache",
     }
